@@ -36,7 +36,7 @@ var UserLogin=React.createClass({
                     <input type="text" ref="username" maxLength="20"/>
                     <label>Password:</label>
                     <input type="password" ref="password" maxLength="20"/>
-                    <button  type="submit" >
+                    <button type="submit" >
                       Login
                     </button>
                   </form>
