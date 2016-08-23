@@ -68,6 +68,7 @@ Login page
 .loginForm {
   margin-left:15px;
   margin-right:20px;
+  width:200px;
 }
 
 .loginForm button{
