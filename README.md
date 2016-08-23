@@ -16,3 +16,5 @@ A front-end doc broswer written by Javascript via React framework
     3. Open web browser with link:
   
     http://localhost:3000/static/index.html
+
+###This doc browser has been tested with Google Chrome 51.0.2704.79, Safari 9.1
