@@ -92,6 +92,12 @@ var SearchBar=React.createClass({
     }
   },
 
+  //Hanlder for emptying user input inside the search box
+  handleEmpty:function(){
+    this.setState({search:''});
+    this.props.getSearchText('');
+  },
+
   //Scroll to the previous found result
   handleSearchPrev:function(e){
     e.preventDefault();
@@ -120,6 +126,10 @@ var SearchBar=React.createClass({
     }
   },
   render:function(){
+    var emptyButton=null;
+    if(this.state.search.length>0){
+      emptyButton=<button className="close" onClick={this.handleEmpty}>&times;</button>;
+    }
     var searchResult='no results'
     var prevImg=null;
     var nextImg=null;
@@ -135,8 +145,9 @@ var SearchBar=React.createClass({
     }
     return(
       <form className="col-md-5 col-sm-6 col-xs-6 flexColumn searchBox" onSubmit={this.handleSearch}>
-          <input type="text" style={{borderWidth:'0'}} ref="search" maxLength={"20"} placeholder="Text Search"
+          <input type="text" ref="search" maxLength={"20"} placeholder="Text Search"
               value={this.state.search} onChange={this.handleChange} />
+          <div className="closeWrapper">{emptyButton}</div>
           <div className="searchResult" >{searchResult}</div>
           <input type="submit" value="Search"/>
           <span title="Prev Search">{prevImg}</span>
