@@ -377,7 +377,7 @@ var ListItem=React.createClass({
 Doc List Component, listing the list of docs retrieved from server
 */
 var ListView=React.createClass({
-  componentDidMount(){
+  componentWillMount(){
     if(this.props.list.length===0){
       this.handleReload();
     }
